@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../css/Hero.css'
 import Row from './Row'
-
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Pagination from '@mui/material/Pagination';
@@ -25,7 +24,7 @@ function Hero() {
 
   const API_KEY = process.env.REACT_APP_API_KEY;
   const baseUrl = 'https://pixabay.com/api/'
-    
+    console.log(API_KEY);
   useEffect(() => {
       const fetchImages = async () => {
           const response = await axios(`${baseUrl}?key=${API_KEY}&per_page=18&q=${searchText}&page=${page}`);
