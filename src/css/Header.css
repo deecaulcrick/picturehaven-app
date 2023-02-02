@@ -1,0 +1,15 @@
+.Header {
+  border-bottom: 1px solid #2a4157;
+  background: #001e3c;
+  display: flex;
+  justify-content: center;
+  padding: 20px 30px;
+  background: rgba(0, 30, 60, 0.4);
+  backdrop-filter: blur(25px);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.logo {
+  width: 100px;
+}

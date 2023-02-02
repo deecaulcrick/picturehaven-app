@@ -1,0 +1,58 @@
+.Hero {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 0px;
+  min-height: 350px;
+}
+
+.hero-content {
+  width: 80%;
+}
+
+.Hero h1 {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 400;
+  color: white;
+}
+
+.Hero input {
+  width: 100%;
+  outline: 1.5px solid white;
+  padding: 15px 30px;
+  color: white;
+  border-radius: 3px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.MuiPaginationItem-root,
+.MuiPaginationItem-icon {
+  color: #fff !important;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .Hero {
+    padding: 50px 100px;
+  }
+
+  .Hero h1 {
+    font-size: 40px;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 488px) {
+  /* For Mobile: */
+  .pagination {
+    padding: 0px 20px;
+  }
+}

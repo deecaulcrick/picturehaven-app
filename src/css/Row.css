@@ -1,0 +1,47 @@
+.Row {
+  padding: 30px;
+}
+
+.images {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.backdrop {
+  background-color: #001e3c;
+  padding: 50px;
+  border-radius: 5px;
+  width: 450px;
+}
+
+.backdrop img {
+  width: 450px;
+  height: 300px;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 480px) {
+  .MuiImageList-masonry {
+    column-count: 1 !important;
+  }
+  .backdrop {
+    background-color: #001e3c;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80vw;
+  }
+
+  .backdrop img {
+    width: 80vw;
+    height: 350px;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .MuiImageList-masonry {
+    column-count: 2 !important;
+  }
+}
