@@ -44,7 +44,7 @@ function Row({ images }) {
       >
         {selectedImage.id && (
         <div className='backdrop' style={{ marginTop: '20px' }}>
-          <img src={selectedImage.webformatURL} />
+          <img src={selectedImage.webformatURL} alt=''/>
           <Stack direction="row" spacing={10}>
             <p>
               <strong>Tags:</strong> {selectedImage.tags}

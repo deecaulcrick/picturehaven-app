@@ -55,7 +55,6 @@ function Hero() {
               name='searchText'
               value={searchText}
               onChange={onTextChange}
-              floatingLabelText="Search for images"
               placeholder='Search high-resolution images' />
 
             </Box>
