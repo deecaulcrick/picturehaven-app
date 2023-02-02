@@ -35,6 +35,11 @@
   color: #fff !important;
 }
 
+.preloader{
+  display: flex;
+  justify-content: center;
+
+}
 @media only screen and (min-width: 768px) {
   /* For desktop: */
   .Hero {

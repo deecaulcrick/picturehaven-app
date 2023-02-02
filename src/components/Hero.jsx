@@ -4,13 +4,16 @@ import axios from 'axios'
 import '../css/Hero.css'
 import Row from './Row'
 import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
 import TextField from '@mui/material/TextField';
 import Pagination from '@mui/material/Pagination';
 
 function Hero() {
   const [searchText, setSearchText ] = useState('');
-  const [images, setImages] = useState([])
-  const [page, setPage] = useState(1)
+  const [images, setImages] = useState([]);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+
 
   //set pagination
   const handleChange = (e, value) => {
@@ -23,17 +26,26 @@ function Hero() {
   }
 
   const API_KEY = process.env.REACT_APP_API_KEY;
-  const baseUrl = 'https://pixabay.com/api/'
-    console.log(API_KEY);
+  const baseUrl = 'https://pixabay.com/api/';
+
+
   useEffect(() => {
       const fetchImages = async () => {
-          const response = await axios(`${baseUrl}?key=${API_KEY}&per_page=18&q=${searchText}&page=${page}`);
-          setImages(response.data.hits);
-      
-      };
-
-      fetchImages();
-    }, [searchText, page]);
+          setLoading(true);
+          try {
+            const response = await axios.get(`${baseUrl}?key=${API_KEY}&per_page=18&q=${searchText}&page=${page}`);
+            setImages(response.data.hits);
+          } catch (error) {
+            console.error(error);
+          } finally {
+            setLoading(false);
+          }
+        };
+    
+          fetchImages();
+        
+      }, [searchText, page]);
+         
 
   return (
     <div>
@@ -60,7 +72,12 @@ function Hero() {
           </div>
         
       </div>
-      <Row images={images}/>
+      {loading ? (
+        <div className='preloader'>
+        <CircularProgress />
+        </div>
+      ) : (<Row images={images}/>) }
+      
       <div className='pagination'>
         <Pagination count={10} color="primary" size="large" page={page} onChange={handleChange}className='pagination-item'/>
       </div>
