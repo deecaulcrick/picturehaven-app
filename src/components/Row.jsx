@@ -10,7 +10,7 @@ function Row({ images }) {
         {images.map((image) => (
           <ImageListItem key={image.id}>
             <img
-              src={`${image.webformatURL}?w=248&fit=crop&auto=format`}
+              src={`${image.previewURL}?w=248&fit=crop&auto=format`}
               srcSet={`${image.webformatURL}?w=248&fit=crop&auto=format&dpr=2 2x`}
               alt={image.tags}
               loading="lazy"
