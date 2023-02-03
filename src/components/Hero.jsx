@@ -34,7 +34,7 @@ function Hero() {
       const fetchImages = async () => {
           setLoading(true);
           try {
-            const response = await axios.get(`${baseUrl}?key=${API_KEY}&per_page=18&q=${searchText}&page=${page}`);
+            const response = await axios.get(`${baseUrl}?key=${API_KEY}&per_page=21&q=${searchText}&page=${page}`);
             setImages(response.data.hits);
           } catch (error) {
             console.error(error);
