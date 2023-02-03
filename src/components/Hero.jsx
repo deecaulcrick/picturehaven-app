@@ -23,6 +23,7 @@ function Hero() {
   //set text
   const onTextChange = (e) =>{
       setSearchText(e.target.value)
+      setPage(1)
   }
 
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -53,19 +54,22 @@ function Hero() {
     
       <div className='Hero'>
           <div className='hero-content'>
-          <h1>The best place to get free, stunning, high-quality images photos and videos for your next project.</h1>
+          <h1>The best place to get free, stunning, high-quality images for your next project.</h1>
 
           <Box component="form"
             sx={{
             '& > :not(style)': { m: 1, width: '100%' },
               }}
             noValidate
-            autoComplete="off">
+            autoComplete="off"
+            onSubmit={(e)=> e.preventDefault}
+           >
 
               <TextField id="outlined-basic" variant="outlined"
               name='searchText'
               value={searchText}
               onChange={onTextChange}
+              onKeyPress={e => e.key === 'Enter' && e.preventDefault()}
               placeholder='Search high-resolution images' />
 
             </Box>

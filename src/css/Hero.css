@@ -58,6 +58,6 @@
 @media only screen and (max-width: 488px) {
   /* For Mobile: */
   .pagination {
-    padding: 0px 20px;
+    padding: 0px 15px;
   }
 }
