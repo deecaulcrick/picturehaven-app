@@ -70,7 +70,8 @@ function Hero() {
               value={searchText}
               onChange={onTextChange}
               onKeyPress={e => e.key === 'Enter' && e.preventDefault()}
-              placeholder='Search high-resolution images' />
+              placeholder='Search high-resolution images'
+              loading='lazy' />
 
             </Box>
           </div>
