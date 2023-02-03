@@ -1,13 +1,13 @@
 .Hero {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 30px;
   padding-bottom: 0px;
-  min-height: 350px;
+  min-height: 250px;
 }
 
 .hero-content {
-  width: 80%;
+  width: 100%;
 }
 
 .Hero h1 {
@@ -16,6 +16,10 @@
   font-weight: 400;
   color: white;
 }
+
+/* form{
+  padding: 00px;
+} */
 
 .Hero input {
   width: 100%;
